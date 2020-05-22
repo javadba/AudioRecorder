@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFED2477F419009E0722 /* AppDelegate.swift */; };
-		C41FBFF02477F419009E0722 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFEF2477F419009E0722 /* SceneDelegate.swift */; };
 		C41FBFF22477F419009E0722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFF12477F419009E0722 /* ViewController.swift */; };
 		C41FBFF52477F419009E0722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF32477F419009E0722 /* Main.storyboard */; };
 		C41FBFF72477F41B009E0722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF62477F41B009E0722 /* Assets.xcassets */; };
 		C41FBFFA2477F41B009E0722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF82477F41B009E0722 /* LaunchScreen.storyboard */; };
 		C41FC0052477F41B009E0722 /* AudioRecorder2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FC0042477F41B009E0722 /* AudioRecorder2Tests.swift */; };
+		C41FC0102477F46B009E0722 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FC00F2477F46B009E0722 /* AudioRecorder.swift */; };
+		C41FC0122477F99B009E0722 /* AudioRecorderV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FC0112477F99B009E0722 /* AudioRecorderV2.swift */; };
+		C41FC01424780EC8009E0722 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FC01324780EC8009E0722 /* Samples.swift */; };
+		C46A9A1624781AB800E297BC /* SamplesUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A9A1524781AB800E297BC /* SamplesUploader.swift */; };
+		C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A9A1724781CFB00E297BC /* SamplesFileWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +33,6 @@
 /* Begin PBXFileReference section */
 		C41FBFEA2477F419009E0722 /* AudioRecorder2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorder2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41FBFED2477F419009E0722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C41FBFEF2477F419009E0722 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C41FBFF12477F419009E0722 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C41FBFF42477F419009E0722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C41FBFF62477F41B009E0722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,11 @@
 		C41FC0002477F41B009E0722 /* AudioRecorder2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRecorder2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41FC0042477F41B009E0722 /* AudioRecorder2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder2Tests.swift; sourceTree = "<group>"; };
 		C41FC0062477F41B009E0722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C41FC00F2477F46B009E0722 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		C41FC0112477F99B009E0722 /* AudioRecorderV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderV2.swift; sourceTree = "<group>"; };
+		C41FC01324780EC8009E0722 /* Samples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
+		C46A9A1524781AB800E297BC /* SamplesUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesUploader.swift; sourceTree = "<group>"; };
+		C46A9A1724781CFB00E297BC /* SamplesFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesFileWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +88,16 @@
 			isa = PBXGroup;
 			children = (
 				C41FBFED2477F419009E0722 /* AppDelegate.swift */,
-				C41FBFEF2477F419009E0722 /* SceneDelegate.swift */,
 				C41FBFF12477F419009E0722 /* ViewController.swift */,
 				C41FBFF32477F419009E0722 /* Main.storyboard */,
 				C41FBFF62477F41B009E0722 /* Assets.xcassets */,
 				C41FBFF82477F41B009E0722 /* LaunchScreen.storyboard */,
 				C41FBFFB2477F41B009E0722 /* Info.plist */,
+				C41FC00F2477F46B009E0722 /* AudioRecorder.swift */,
+				C41FC0112477F99B009E0722 /* AudioRecorderV2.swift */,
+				C41FC01324780EC8009E0722 /* Samples.swift */,
+				C46A9A1524781AB800E297BC /* SamplesUploader.swift */,
+				C46A9A1724781CFB00E297BC /* SamplesFileWriter.swift */,
 			);
 			path = AudioRecorder2;
 			sourceTree = "<group>";
@@ -201,8 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41FBFF22477F419009E0722 /* ViewController.swift in Sources */,
+				C41FC0102477F46B009E0722 /* AudioRecorder.swift in Sources */,
 				C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */,
-				C41FBFF02477F419009E0722 /* SceneDelegate.swift in Sources */,
+				C41FC01424780EC8009E0722 /* Samples.swift in Sources */,
+				C41FC0122477F99B009E0722 /* AudioRecorderV2.swift in Sources */,
+				C46A9A1624781AB800E297BC /* SamplesUploader.swift in Sources */,
+				C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RC5LTLAU9;
 				INFOPLIST_FILE = AudioRecorder2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RC5LTLAU9;
 				INFOPLIST_FILE = AudioRecorder2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
