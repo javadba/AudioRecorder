@@ -66,28 +66,29 @@ class FileUtils: MiscUtilsS {
     }
 
     static func saveBlob(_ myBlob: String) {
-//        let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
-//        let furl = URL(fileURLWithPath: path)
-////        DispatchQueue.background(delay: 1.0, background: {
-//        DispatchQueue.async {
-//            do {
-//                for i in (1...0) {
-//                    let ts = Int(FileUtils.tstamp() * 200)
-//                    let fpath = furl.appendingPathComponent("breath.\(ts).audio")
-//                    tp("Saving \(myBlob.count)) bytes to \(fpath) loop#\(Int(i)) ..")
-//                    try myBlob.data(using: .utf8)?.write(to: fpath)
-//                    let readBack = try String(contentsOf: fpath)
-//                    tp("readBack len = \(readBack.count)")
-//                    let chatUrl = URL.init(string: "http://localhost:7094")!
-//                    tp("Sending Web Message to \(chatUrl) ..")
-//                    let contents = try String(contentsOf: chatUrl)
-//                    tp("Received \(contents)")
-//                }
-//            } catch let except {
-//                // failed to record!
-//                tp("Error in write/read\n" + except.localizedDescription)
-//            }
-//        }
+        let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
+        let furl = URL(fileURLWithPath: path)
+        DispatchQueue.background(delay: 1.0, background: {
+            do {
+                for i in (1...0) {
+                    let ts = Int(FileUtils.tstamp() * 200)
+                    let fpath = furl.appendingPathComponent("breath.\(ts).audio")
+                    tp("Saving \(myBlob.count)) bytes to \(fpath) loop#\(Int(i)) ..")
+                    try myBlob.data(using: .utf8)?.write(to: fpath)
+                    let readBack = try String(contentsOf: fpath)
+                    tp("readBack len = \(readBack.count)")
+                    let chatUrl = URL.init(string: "http://localhost:7094")!
+                    tp("Sending Web Message to \(chatUrl) ..")
+                    let contents = try String(contentsOf: chatUrl)
+                    tp("Received \(contents)")
+                }
+            } catch let except {
+                // failed to record!
+                tp("Error in write/read\n" + except.localizedDescription)
+            }
+        }, completion: {
+            tp("Finished all")
+        })
     }
 
     static func getDocumentsDirectory() -> URL {
@@ -96,3 +97,17 @@ class FileUtils: MiscUtilsS {
     }
 
 }
+
+extension DispatchQueue {
+    static func background(delay: Double = 0.2, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async {
+            background?()
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    completion()
+                })
+            }
+        }
+    }
+}
+
