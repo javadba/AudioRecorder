@@ -9,34 +9,8 @@
 import UIKit
 
 
-//protocol MiscUtils {
-//    func tp(_ msg: String)
-//    func ts() -> String
-//    typealias Fl = Float
-//}
-//
-//extension MiscUtils {
-//
-//    func ts() -> String {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM-DD HH:mm:ss.SSS"
-//        return formatter.string(from: Date())
-//    }
-//
-//    func fileTs() -> String {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMDDHH_mmss"
-//        return formatter.string(from: Date())
-//    }
-//
-//    func tp(_ msg: String) {
-//        print("[\(ts())] \(msg)")
-//    }
-//
-//}
-
 class ViewController: UIViewController,  MiscUtils {
-    private let recodignUseCase = RecodingUserCase()
+    private let recorder = DataRecorder()
 
 
     private func getTask(threadNum: Int, taskNum: Int) -> (() -> ())? {
@@ -64,9 +38,13 @@ class ViewController: UIViewController,  MiscUtils {
             Thread.setThreadPriority(0.7)
             return t
         }
-        print( "Threads: " + threads.map{n in "\(n)"}.joined(separator: ","))
-        threads.map { t in t.start() }
-        
+        print("Threads: " + threads.map { n in
+            "\(n)"
+        }.joined(separator: ","))
+        threads.map { t in
+            t.start()
+        }
+
         let waiter = Thread {
             for thread in threads {
                 repeat {
@@ -77,16 +55,9 @@ class ViewController: UIViewController,  MiscUtils {
             print("FINIHSED ALL!")
         }
         waiter.start()
-        
-        
-//        threads.map { t in
-//            repeat {
-//                Thread.sleep(forTimeInterval: 0.5)
-//            } while (!t.isFinished)
-//        }
-//        threads.map{ t in print("t.finished: \(t.isFinished)")}
+
     }
-    
+
     @IBAction func runThreadedDispatch() {
         DispatchQueue.global(qos: .default).async {
             let nThreads = 4
@@ -118,11 +89,11 @@ class ViewController: UIViewController,  MiscUtils {
 
     
     @IBAction func record() {
-        recodignUseCase.startRecording()
+        recorder.startRecording()
        
     }
     
     @IBAction func stop() {
-        recodignUseCase.stopRecording()
+        recorder.stopRecording()
     }
 }

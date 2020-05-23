@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RecodingUserCase {
+class DataRecorder {
     private let samplesUploader = SamplesUploader()
     private let samplesWriter = SamplesFileWriter(
         filePath: {
@@ -19,22 +19,22 @@ class RecodingUserCase {
     )
     
     //    private let recoder = RecordAudio()
-    private let recoder = AudioRecorderV2()
+    private let recorder = AudioRecorderV2()
     
     func startRecording() {
-        recoder.delegate = self
+        recorder.delegate = self
 
-        recoder.startRecording { _ in
+        recorder.startRecording { _ in
         }
     }
     
     func stopRecording() {
-        recoder.stopRecording()
+        recorder.stopRecording()
     }
 }
 
 
-extension RecodingUserCase: RecordAudioDelegate {
+extension DataRecorder: RecordAudioDelegate {
     func audioRecorder(_ audioRecorder: AudioRecorder, receivedSamples samples: Samples) {
 //        samplesWriter.write(samples)
 //        samplesUploader.upload(samples)
@@ -42,10 +42,18 @@ extension RecodingUserCase: RecordAudioDelegate {
     
 }
 
+var iters:Int = 0
+let MaxIters = 5
+
 // MARK: writerUploader
-extension RecodingUserCase: RecordAudioV2Delegate {
+extension DataRecorder: RecordAudioV2Delegate {
+
     func audioRecorder(_ audioRecorder: AudioRecorderV2, receivedSamples samples: Samples) {
-        samplesWriter.write(samples)
-        samplesUploader.upload(samples)
+        if (iters < MaxIters) {
+            print("Executing iteration \(iters) ..")
+            samplesWriter.write(samples)
+            samplesUploader.upload(samples)
+            iters  += 1
+        }
     }
 }

@@ -51,11 +51,13 @@ class FileUtils: MiscUtilsS {
 //        })
 //    }
 
+    static func getBaseWriteURL() -> URL {
+        let url = URL(string:NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])?.absoluteURL
+        return url!
+    }
+    
     static func mkdir(_ dir: String) {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0]
-        let docURL = URL(string: documentsDirectory)!
-        let dataPath = docURL.appendingPathComponent(dir)
+        let dataPath = getBaseWriteURL().appendingPathComponent(dir)
         if !FileManager.default.fileExists(atPath: dataPath.absoluteString) {
             do {
                 try FileManager.default.createDirectory(atPath: dataPath.absoluteString, withIntermediateDirectories: true, attributes: nil)
@@ -63,6 +65,48 @@ class FileUtils: MiscUtilsS {
                 print(error.localizedDescription);
             }
         }
+    }
+
+    static func getWriteURL(_ subDir: String, _ fname: String, _ ext: String) -> URL {
+        if (fname == "") {
+            return URL(string:"file:///" + getBaseWriteURL().appendingPathComponent(subDir).absoluteString)!
+        } else {
+            return URL(string:"file:///" + getBaseWriteURL().appendingPathComponent(subDir)
+                    .appendingPathComponent(fname).appendingPathExtension(ext).absoluteString)!
+        }
+    }
+
+
+    static func getReadURL(_ subDir: String, _ fname: String, _ ext: String) -> URL {
+//        let subDir = path.substring(from: 0, to: path.firstIndex(of: <#T##Element##Swift.String.Element#>))
+        let url: URL = {
+             if (subDir != "") {
+                return Bundle.main.url(forResource: fname, withExtension: ext, subdirectory: subDir)!
+            } else {
+                return Bundle.main.url(forResource: fname, withExtension: ext)!
+            }
+        }()
+        print("url=\(url)")
+        return url
+    }
+
+    static func formatError(_ except: Error) -> String {
+        return " ERROR: \(except.localizedDescription)"
+    }
+
+    static func writeFile( subDir: String,  fname: String,  data: String) {
+        let url = getWriteURL(subDir, fname, "dat")
+        print("Writing \(data.count) bytes to \(url.absoluteString) ..")
+        DispatchQueue.background(delay: 1.0, background: {
+            do {
+                try data.data(using: .utf8)?.write(to: url)
+            } catch let except {
+                // failed to record!
+                tp("Error in write/read to \(url): " + formatError(except))
+            }
+        }, completion: {
+//            tp("Finished writing to \(url)")
+        })
     }
 
     static func saveBlob(_ myBlob: String) {

@@ -51,10 +51,22 @@ private class MyETLClass {
 
 private class UploadSamplesOperation: Operation {
     private static var lastId: Int = 0
+
+//   private func synchronized<T>(lockObj: AnyObject!, closure: () throws -> T) rethrows ->  T {
+//        objc_sync_enter(lockObj)
+//        defer {
+//            objc_sync_exit(lockObj)
+//        }
+//
+//        return try closure()
+//    }
+//
     private static func nextId() -> Int {
-        let id = lastId + 1
-        lastId = id
-        return id
+        let lock = self
+        objc_sync_enter(lock)
+        defer{objc_sync_exit(lock)}
+        lastId = lastId + 1
+        return lastId
     }
     
     private let id: Int
@@ -69,8 +81,7 @@ private class UploadSamplesOperation: Operation {
         self.samples = samples
         self._isFinished = false
         self._isExecuting = false
-        self.id = Self.lastId + 1
-        Self.lastId = Self.nextId()
+        self.id = Self.nextId()
         super.init()
     }
     
@@ -85,10 +96,11 @@ private class UploadSamplesOperation: Operation {
     override func start() {
         print("Started uploading batch #\(id)")
         setIsExecuting(true)
-        
-        
-        // Simulate uploading
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval.random(in: 0..<5)) {
+
+        DispatchQueue.main.asyncAfter(deadline: .now() /*+ TimeInterval.random(in: 0..<5)*/) {
+            print("Start uploading batch #\(self.id)\n")
+            // TODO: put actual upload here
+            Thread.sleep(forTimeInterval: Double(Int.random(in: 1...5)))
             self.setIsExecuting(false)
             self.setIsFinished(true)
             print("Finished uploading batch #\(self.id)\n")

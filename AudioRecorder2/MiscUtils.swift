@@ -17,6 +17,12 @@ protocol MiscUtils {
 }
 
 extension MiscUtils {
+//    func formatError(error: Error) {
+//        if (notInited) {
+//            Backtrace.install()
+//        }
+//        Backtrace.install()
+//    }
 
     func ts() -> String {
         let formatter = DateFormatter()
@@ -51,6 +57,7 @@ extension MiscUtilsS {
     static func tps(_ msg: String) { let mu = MiscUtilsC(); mu.tp(msg) }
     static func tss() -> String { let mu = MiscUtilsC(); return mu.ts() }
     static func fileTss() -> String { let mu = MiscUtilsC(); return mu.fileTs() }
+
 }
 
 
