@@ -15,8 +15,13 @@ class SamplesFileWriter {
     init(filePath: String) {
         self.filePath = filePath
     }
-    
+
+    var cntr = 0
     func write(_ samples: Samples) {
+        cntr += 1
+        if (cntr % 100 == 1) {
+            print("Writing \(samples.count) samples.. loop \(cntr)")
+        }
         createFileHandleIfNeccessary()
         
         fileHandle.write(samples.makeData(copy: false))

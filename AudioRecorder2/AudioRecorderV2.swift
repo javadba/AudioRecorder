@@ -10,7 +10,7 @@ import AudioUnit
 import AVFoundation
 
 protocol RecordAudioV2Delegate: class {
-    func audioRecorder(_ audioRecorder: AudioRecorderV2, didReceiveSamples samples: Samples)
+    func audioRecorder(_ audioRecorder: AudioRecorderV2, receivedSamples samples: Samples)
 }
 
 final class AudioRecorderV2 {
@@ -124,19 +124,21 @@ final class AudioRecorderV2 {
     }
     
     private func recordMicrophoneInputSamples(
-        inputDataList : UnsafeMutablePointer<AudioBufferList>,
+        inputDataList : UnsafeMutablePointer<AudioBufferList>, // AudioBufferList*
         frameCount : UInt32 )
     {
         let ptrAudioBuffereList = UnsafeMutableAudioBufferListPointer(inputDataList)
         let audioBuffer = ptrAudioBuffereList[0]
         
-        guard let ptrSamples = audioBuffer.mData?.assumingMemoryBound(to: Float.self) else {
+        // float* ptrSamples = (float *)audioBuffer.mData;
+        guard let ptrSamples = audioBuffer.mData?.assumingMemoryBound(to: Float.self) else { // float *
             return
         }
         
+        // MARK: delegateToReceivedSamples
         delegate?.audioRecorder(
             self,
-            didReceiveSamples: Samples(
+            receivedSamples: Samples(
                 ptrSamples: ptrSamples,
                 frameCount: Int(frameCount),
                 numberChannels: Int(audioBuffer.mNumberChannels)

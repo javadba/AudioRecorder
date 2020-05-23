@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectiveC
 
 class SamplesUploader {
     private let queue: OperationQueue
@@ -19,6 +20,33 @@ class SamplesUploader {
     func upload(_ samples: Samples) {
         queue.addOperation(UploadSamplesOperation(samples: samples))
     }
+}
+
+//protocol HiThere: class {
+//    func sayHi()
+//    func printAttribute()
+//}
+//
+//private let testKey = "HiThere.Key"
+//extension HiThere {
+//    var test: String {
+//        set {
+//            objc_setAssociatedObject(self, testKey, newValue, .OBJC_ASSOCIATION_COPY)
+//        }
+//        get {
+//            return objc_getAssociatedObject(self, testKey) as! String
+//        }
+//    }
+//    func sayHi() { print("hi") }
+//    func printAttribute(obj: Any) { print("hi") }
+//}
+
+private class MyETLClass {
+    open func saveToSpark(samples: Samples) -> Bool {
+        print("Saved To Spark")
+        return true
+    }
+
 }
 
 private class UploadSamplesOperation: Operation {
@@ -36,7 +64,7 @@ private class UploadSamplesOperation: Operation {
     
     private var _isFinished: Bool
     private var _isExecuting: Bool
-    
+
     init(samples: Samples) {
         self.samples = samples
         self._isFinished = false
@@ -49,14 +77,15 @@ private class UploadSamplesOperation: Operation {
     override var isFinished: Bool {
         return _isFinished
     }
-    
+
     override var isExecuting: Bool {
         return _isExecuting
     }
-    
+
     override func start() {
         print("Started uploading batch #\(id)")
         setIsExecuting(true)
+        
         
         // Simulate uploading
         DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval.random(in: 0..<5)) {
@@ -71,7 +100,7 @@ private class UploadSamplesOperation: Operation {
         _isExecuting = false
         didChangeValue(for: \.isExecuting)
     }
-    
+
     private func setIsFinished(_ value: Bool) {
         willChangeValue(for: \.isFinished)
         _isFinished = true
