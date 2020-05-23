@@ -17,20 +17,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-24-VUU">
-                                <rect key="frame" x="161.5" y="414" width="91" height="68"/>
+                                <rect key="frame" x="133" y="376" width="148" height="144"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNh-ma-tf5">
-                                        <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                        <rect key="frame" x="28.5" y="0.0" width="91" height="30"/>
                                         <state key="normal" title="Record audio"/>
                                         <connections>
                                             <action selector="record" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjM-If-xeY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD0-vF-l6G">
-                                        <rect key="frame" x="29.5" y="38" width="32" height="30"/>
+                                        <rect key="frame" x="58" y="38" width="32" height="30"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="stop" destination="BYZ-38-t0r" eventType="touchUpInside" id="r4D-uI-n8a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nv8-5P-hlx">
+                                        <rect key="frame" x="32.5" y="76" width="83" height="30"/>
+                                        <state key="normal" title="Run threads"/>
+                                        <connections>
+                                            <action selector="runThreaded" destination="BYZ-38-t0r" eventType="touchUpInside" id="mJf-1T-iqH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JM-y6-5gS">
+                                        <rect key="frame" x="0.0" y="114" width="148" height="30"/>
+                                        <state key="normal" title="Run threads Dispatch"/>
+                                        <connections>
+                                            <action selector="runThreadedDispatch" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHh-0j-gGu"/>
                                         </connections>
                                     </button>
                                 </subviews>

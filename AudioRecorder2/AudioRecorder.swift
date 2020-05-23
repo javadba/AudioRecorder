@@ -21,7 +21,8 @@ struct OSError: Error {
 }
 
 protocol RecordAudioDelegate: class {
-    func audioRecorder(_ audioRecorder: AudioRecorder, didReceiveSamples samples: Samples)
+    func audioRecorder(_ audioRecorder: AudioRecorder, receivedSamples samples: Samples)
+//    func  recorderDIdreceiveSamples()
 }
 
 enum StartAudioRecordingResult {
@@ -291,10 +292,10 @@ final class AudioRecorder {
         guard let ptrSamples = audioBuffer.mData?.assumingMemoryBound(to: Float.self) else {
             return
         }
-        
+        //MARK: delegate
         delegate?.audioRecorder(
             self,
-            didReceiveSamples: Samples(
+            receivedSamples: Samples(
                 ptrSamples: ptrSamples,
                 frameCount: Int(frameCount),
                 numberChannels: Int(audioBuffer.mNumberChannels)

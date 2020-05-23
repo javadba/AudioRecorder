@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3191F324785094000F9F81 /* DataRecorder.swift */; };
+		AA50E7BF2479AE5400C4DDBF /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */; };
+		AA50E7C12479AE6F00C4DDBF /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */; };
+		AA50E7C42479C59F00C4DDBF /* Backtrace in Frameworks */ = {isa = PBXBuildFile; productRef = AA50E7C32479C59F00C4DDBF /* Backtrace */; };
 		C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFED2477F419009E0722 /* AppDelegate.swift */; };
 		C41FBFF22477F419009E0722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFF12477F419009E0722 /* ViewController.swift */; };
 		C41FBFF52477F419009E0722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF32477F419009E0722 /* Main.storyboard */; };
@@ -31,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA3191F324785094000F9F81 /* DataRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecorder.swift; sourceTree = "<group>"; };
+		AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscUtils.swift; sourceTree = "<group>"; };
 		C41FBFEA2477F419009E0722 /* AudioRecorder2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorder2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41FBFED2477F419009E0722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41FBFF12477F419009E0722 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA50E7C42479C59F00C4DDBF /* Backtrace in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +106,9 @@
 				C41FC01324780EC8009E0722 /* Samples.swift */,
 				C46A9A1524781AB800E297BC /* SamplesUploader.swift */,
 				C46A9A1724781CFB00E297BC /* SamplesFileWriter.swift */,
+				AA3191F324785094000F9F81 /* DataRecorder.swift */,
+				AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */,
+				AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */,
 			);
 			path = AudioRecorder2;
 			sourceTree = "<group>";
@@ -127,6 +138,9 @@
 			dependencies = (
 			);
 			name = AudioRecorder2;
+			packageProductDependencies = (
+				AA50E7C32479C59F00C4DDBF /* Backtrace */,
+			);
 			productName = AudioRecorder2;
 			productReference = C41FBFEA2477F419009E0722 /* AudioRecorder2.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +191,9 @@
 				Base,
 			);
 			mainGroup = C41FBFE12477F419009E0722;
+			packageReferences = (
+				AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */,
+			);
 			productRefGroup = C41FBFEB2477F419009E0722 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,13 +229,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA50E7BF2479AE5400C4DDBF /* FileUtils.swift in Sources */,
 				C41FBFF22477F419009E0722 /* ViewController.swift in Sources */,
 				C41FC0102477F46B009E0722 /* AudioRecorder.swift in Sources */,
 				C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */,
 				C41FC01424780EC8009E0722 /* Samples.swift in Sources */,
+				AA50E7C12479AE6F00C4DDBF /* MiscUtils.swift in Sources */,
 				C41FC0122477F99B009E0722 /* AudioRecorderV2.swift in Sources */,
 				C46A9A1624781AB800E297BC /* SamplesUploader.swift in Sources */,
 				C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */,
+				AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RC5LTLAU9;
 				INFOPLIST_FILE = AudioRecorder2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,7 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RC5LTLAU9;
 				INFOPLIST_FILE = AudioRecorder2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +507,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-server/swift-backtrace.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA50E7C32479C59F00C4DDBF /* Backtrace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */;
+			productName = Backtrace;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C41FBFE22477F419009E0722 /* Project object */;
 }
