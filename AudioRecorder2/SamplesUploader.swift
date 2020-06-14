@@ -1,3 +1,11 @@
+//
+//  SamplesUploader.swift
+//  AudioRecorder2
+//
+//  Created by Yaroslav Zhurakovskiy on 22.05.2020.
+//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
+//
+
 import Foundation
 import ObjectiveC
 
@@ -44,6 +52,7 @@ private class UploadSamplesOperation: Operation {
     
     private let id: Int
     private let samples: Samples
+    let PrintSkips = 500
     
     private var task: URLSessionDataTask?
     
@@ -67,16 +76,20 @@ private class UploadSamplesOperation: Operation {
     }
 
     override func start() {
-        print("Started uploading batch #\(id)")
+        if (self.id % self.PrintSkips == 1) {
+            print("Started uploading batch #\(id)")
+        }
         setIsExecuting(true)
 
         DispatchQueue.main.asyncAfter(deadline: .now() /*+ TimeInterval.random(in: 0..<5)*/) {
-            print("Start uploading batch #\(self.id) with samples.count=\(self.samples.count)\n")
+//                print("Start uploading batch #\(self.id) with samples.count=\(self.samples.count)\n")
             // TODO: put actual upload here
-            Thread.sleep(forTimeInterval: Double(Int.random(in: 1...2)))
+//            Thread.sleep(forTimeInterval: Double(Int.random(in: 1...2)))
             self.setIsExecuting(false)
             self.setIsFinished(true)
-            print("Finished uploading batch #\(self.id)\n")
+            if (self.id % self.PrintSkips == 1) {
+                print("Finished uploading batch #\(self.id)\n")
+            }
         }
     }
     

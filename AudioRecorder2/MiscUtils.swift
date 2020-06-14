@@ -53,24 +53,3 @@ extension MiscUtilsS {
 
 }
 
-
-//
-//
-//class Ts {
-//    lazy var fileDateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "HHmmss_SSS"
-//        return formatter
-//    }()
-//
-//    lazy var logDateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM-DD HH:mm:ss.SSS"
-//        return formatter
-//    }()
-//
-//    func ts() -> String {
-//        return logDateFormatter.string(from: Date())
-//    }
-//}
-

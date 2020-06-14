@@ -25,13 +25,6 @@ protocol RecordAudioDelegate: class {
 //    func  recorderDIdreceiveSamples()
 }
 
-enum StartAudioRecordingResult {
-    case success
-    case audioUnitStartFailure(OSStatus)
-    case permissionDenied
-    case failure(Error)
-}
-
 final class AudioRecorder {
     private var audioUnit: AudioUnit?
     

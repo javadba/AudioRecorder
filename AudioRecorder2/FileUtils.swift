@@ -3,18 +3,8 @@ import Dispatch
 import Foundation
 
 class FileUtils: MiscUtilsS {
-    class func write(_ path: String, _ data: String) {
-        do {
-
-            let fpath = getDocumentsDirectory().appendingPathComponent(path)
-            tp("Writing \(data.count) bytes to \(fpath) ..")
-            try data.data(using: .utf8)?.write(to: fpath)
-        } catch let except {
-            // failed to record!
-            tp("Error in write/read\n" + except.localizedDescription)
-        }
-
-    }
+    private static let PrintSkips = 500
+    private static var cntr = 0
 
     static func tstamp() -> TimeInterval {
         let ts = Date()
@@ -92,8 +82,11 @@ class FileUtils: MiscUtilsS {
 
     static func writeFile( subDir: String,  fname: String,  data: String) {
         let url = getWriteURL(subDir, fname, "dat")
-        print("Writing \(data.count) bytes to \(url.absoluteString) ..")
-        DispatchQueue.background(delay: 1.0, background: {
+        if (Self.cntr % Self.PrintSkips == 0) {
+            print("Loop \(Self.cntr) Writing \(data.count) bytes to \(url.absoluteString) ..")
+        }
+        Self.cntr += 1
+        DispatchQueue.background(delay: 0.0, background: {
             do {
                 try data.data(using: .utf8)?.write(to: url)
             } catch let except {
@@ -105,10 +98,27 @@ class FileUtils: MiscUtilsS {
         })
     }
 
+    static func writeSync(_ path: String, _ data: String) {
+        var cntr = 0
+        Self.cntr+=1
+        cntr+=1
+        do {
+            let fpath = getDocumentsDirectory().appendingPathComponent(path)
+            if (Self.cntr % Self.PrintSkips == 1) {
+                tp("Writing \(data.count) bytes to \(fpath) ..")
+            }
+            try data.data(using: .utf8)?.write(to: fpath)
+        } catch let except {
+            // failed to record!
+            tp("Error in write/read\n" + except.localizedDescription)
+        }
+
+    }
+
     static func saveBlob(_ myBlob: String) {
         let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0]
         let furl = URL(fileURLWithPath: path)
-        DispatchQueue.background(delay: 1.0, background: {
+        DispatchQueue.background(delay: 0.0, background: {
             do {
                 for i in (1...0) {
                     let ts = Int(FileUtils.tstamp() * 200)
@@ -139,7 +149,7 @@ class FileUtils: MiscUtilsS {
 }
 
 extension DispatchQueue {
-    static func background(delay: Double = 0.2, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+    static func background(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
         DispatchQueue.global(qos: .background).async {
             background?()
             if let completion = completion {

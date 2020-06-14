@@ -2,6 +2,9 @@
 //  AudioRecorderV2.swift
 //  AudioRecorder2
 //
+//  Created by Yaroslav Zhurakovskiy on 22.05.2020.	
+//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
+//
 // Derived from
 // https://gist.github.com/hotpaw2/ba815fc23b5d642705f2b1dedfaf0107
 //
@@ -12,6 +15,13 @@ import AVFoundation
 
 protocol RecordAudioV2Delegate: class {
     func audioRecorder(_ audioRecorder: AudioRecorderV2, receivedSamples samples: Samples)
+}
+
+enum StartAudioRecordingResult {
+    case success
+    case audioUnitStartFailure(OSStatus)
+    case permissionDenied
+    case failure(Error)
 }
 
 final class AudioRecorderV2 {
@@ -45,14 +55,18 @@ final class AudioRecorderV2 {
         return micPermissionGranted
     }
       
-    func startRecording(completion: @escaping (StartAudioRecordingResult) -> Void) {
+//  TODO: can't get this to work
+//    func startRecordingPreferred(completion: @escaping (StartAudioRecordingResult) -> Void) {
+
+    func startRecording() {
         guard !isRecording else {
             return
         }
         
         if !audioSessionActive {
             // configure and activate Audio Session, this might change the sampleRate
-            setupAudioSessionForRecording(completion: completion)
+            // TODO send in completion handler
+            setupAudioSessionForRecording(completion: { _ in })
         }
         
         guard micPermissionGranted && audioSessionActive else { return }
@@ -105,9 +119,11 @@ final class AudioRecorderV2 {
                 try auAudioUnit.allocateRenderResources()
                 try auAudioUnit.startHardware()
                 isRecording = true
-                completion(.success)
+                // TODO fix
+//                completion(.success)
             } catch let error {
-                completion(.failure(error))
+                // TODO fix
+//                completion(.failure(error))
             }
         }
     }

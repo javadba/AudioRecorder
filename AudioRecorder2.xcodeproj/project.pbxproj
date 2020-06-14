@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */; };
+		68AD38159C28F27C8AB0C953 /* ThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */; };
+		68AD3B22CAD00EF9AA403485 /* ThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */; };
 		AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3191F324785094000F9F81 /* DataRecorder.swift */; };
 		AA50E7BF2479AE5400C4DDBF /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */; };
 		AA50E7C12479AE6F00C4DDBF /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTests.swift; sourceTree = "<group>"; };
 		68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalGist.swift; sourceTree = "<group>"; };
 		AA3191F324785094000F9F81 /* DataRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecorder.swift; sourceTree = "<group>"; };
 		AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
@@ -82,6 +85,14 @@
 			path = experiments;
 			sourceTree = "<group>";
 		};
+		68AD34CE2F5BADFD28061E74 /* experiments */ = {
+			isa = PBXGroup;
+			children = (
+				68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */,
+			);
+			path = experiments;
+			sourceTree = "<group>";
+		};
 		C41FBFE12477F419009E0722 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +129,7 @@
 				AA3191F324785094000F9F81 /* DataRecorder.swift */,
 				AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */,
 				AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */,
+				68AD34CE2F5BADFD28061E74 /* experiments */,
 			);
 			path = AudioRecorder2;
 			sourceTree = "<group>";
@@ -249,6 +261,7 @@
 				C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */,
 				AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */,
 				68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */,
+				68AD3B22CAD00EF9AA403485 /* ThreadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41FC0052477F41B009E0722 /* AudioRecorder2Tests.swift in Sources */,
+				68AD38159C28F27C8AB0C953 /* ThreadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
