@@ -2,10 +2,11 @@
 //  AudioRecorderV2.swift
 //  AudioRecorder2
 //
-//  Created by Yaroslav Zhurakovskiy on 22.05.2020.
-//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
+// Derived from
+// https://gist.github.com/hotpaw2/ba815fc23b5d642705f2b1dedfaf0107
 //
 
+import Foundation
 import AudioUnit
 import AVFoundation
 
@@ -21,7 +22,7 @@ final class AudioRecorderV2 {
     private var audioSetupComplete  = false
     private var isRecording         = false
     
-    private var sampleRate : Double =  48000.0      // desired audio sample rate
+    private var sampleRate : Double =  44100.0      // desired audio sample rate
     
     private let circBuffSize        =  32768        // lock-free circular fifo/buffer size
     private var circBuffer          = [Float](repeating: 0, count: 32768)
@@ -69,7 +70,11 @@ final class AudioRecorderV2 {
         
         renderBlock = auAudioUnit.renderBlock
         
-        if enableRecording && micPermissionGranted && audioSetupComplete && audioSessionActive && !isRecording {
+        if (enableRecording
+          && micPermissionGranted
+          && audioSetupComplete
+          && audioSessionActive
+          && !isRecording) {
             auAudioUnit.inputHandler = { actionFlags, timestamp, frameCount, inputBusNumber in
                 guard let renderBlock = self.renderBlock else {
                     return
@@ -182,6 +187,7 @@ final class AudioRecorderV2 {
             if enableRecording {
                 try audioSession.setCategory(.record)
             }
+//            let preferredIOBufferDuration = 0.100  // 5.3 milliseconds = 256 samples
             let preferredIOBufferDuration = 0.0053  // 5.3 milliseconds = 256 samples
             try audioSession.setPreferredSampleRate(sampleRate) // at 48000.0
             try audioSession.setPreferredIOBufferDuration(preferredIOBufferDuration)

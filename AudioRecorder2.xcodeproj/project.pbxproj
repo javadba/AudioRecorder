@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */; };
 		AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3191F324785094000F9F81 /* DataRecorder.swift */; };
 		AA50E7BF2479AE5400C4DDBF /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */; };
 		AA50E7C12479AE6F00C4DDBF /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */; };
-		AA50E7C42479C59F00C4DDBF /* Backtrace in Frameworks */ = {isa = PBXBuildFile; productRef = AA50E7C32479C59F00C4DDBF /* Backtrace */; };
 		C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFED2477F419009E0722 /* AppDelegate.swift */; };
 		C41FBFF22477F419009E0722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFF12477F419009E0722 /* ViewController.swift */; };
 		C41FBFF52477F419009E0722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF32477F419009E0722 /* Main.storyboard */; };
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalGist.swift; sourceTree = "<group>"; };
 		AA3191F324785094000F9F81 /* DataRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecorder.swift; sourceTree = "<group>"; };
 		AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscUtils.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA50E7C42479C59F00C4DDBF /* Backtrace in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68AD336ED4F8332F99C0AAE3 /* experiments */ = {
+			isa = PBXGroup;
+			children = (
+				68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */,
+			);
+			path = experiments;
+			sourceTree = "<group>";
+		};
 		C41FBFE12477F419009E0722 = {
 			isa = PBXGroup;
 			children = (
 				C41FBFEC2477F419009E0722 /* AudioRecorder2 */,
 				C41FC0032477F41B009E0722 /* AudioRecorder2Tests */,
 				C41FBFEB2477F419009E0722 /* Products */,
+				68AD336ED4F8332F99C0AAE3 /* experiments */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,7 +148,7 @@
 			);
 			name = AudioRecorder2;
 			packageProductDependencies = (
-				AA50E7C32479C59F00C4DDBF /* Backtrace */,
+				AA50E7C32479C59F00C4DDBF /* XCSwiftPackageProductDependency */,
 			);
 			productName = AudioRecorder2;
 			productReference = C41FBFEA2477F419009E0722 /* AudioRecorder2.app */;
@@ -192,7 +201,7 @@
 			);
 			mainGroup = C41FBFE12477F419009E0722;
 			packageReferences = (
-				AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */,
+				AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */,
 			);
 			productRefGroup = C41FBFEB2477F419009E0722 /* Products */;
 			projectDirPath = "";
@@ -239,6 +248,7 @@
 				C46A9A1624781AB800E297BC /* SamplesUploader.swift in Sources */,
 				C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */,
 				AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */,
+				68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +519,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */ = {
+		AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/swift-backtrace.git";
 			requirement = {
@@ -520,9 +530,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA50E7C32479C59F00C4DDBF /* Backtrace */ = {
+		AA50E7C32479C59F00C4DDBF /* XCSwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */;
+			package = AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */;
 			productName = Backtrace;
 		};
 /* End XCSwiftPackageProductDependency section */

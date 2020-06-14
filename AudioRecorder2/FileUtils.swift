@@ -1,7 +1,3 @@
-//
-// Created by steve on 5/23/20.
-// Copyright (c) 2020 steve. All rights reserved.
-//
 
 import Dispatch
 import Foundation

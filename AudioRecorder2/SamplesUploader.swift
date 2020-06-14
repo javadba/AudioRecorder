@@ -1,11 +1,3 @@
-//
-//  SamplesUploader.swift
-//  AudioRecorder2
-//
-//  Created by Yaroslav Zhurakovskiy on 22.05.2020.
-//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
-//
-
 import Foundation
 import ObjectiveC
 
@@ -21,25 +13,6 @@ class SamplesUploader {
         queue.addOperation(UploadSamplesOperation(samples: samples))
     }
 }
-
-//protocol HiThere: class {
-//    func sayHi()
-//    func printAttribute()
-//}
-//
-//private let testKey = "HiThere.Key"
-//extension HiThere {
-//    var test: String {
-//        set {
-//            objc_setAssociatedObject(self, testKey, newValue, .OBJC_ASSOCIATION_COPY)
-//        }
-//        get {
-//            return objc_getAssociatedObject(self, testKey) as! String
-//        }
-//    }
-//    func sayHi() { print("hi") }
-//    func printAttribute(obj: Any) { print("hi") }
-//}
 
 private class MyETLClass {
     open func saveToSpark(samples: Samples) -> Bool {
@@ -98,9 +71,9 @@ private class UploadSamplesOperation: Operation {
         setIsExecuting(true)
 
         DispatchQueue.main.asyncAfter(deadline: .now() /*+ TimeInterval.random(in: 0..<5)*/) {
-            print("Start uploading batch #\(self.id)\n")
+            print("Start uploading batch #\(self.id) with samples.count=\(self.samples.count)\n")
             // TODO: put actual upload here
-            Thread.sleep(forTimeInterval: Double(Int.random(in: 1...5)))
+            Thread.sleep(forTimeInterval: Double(Int.random(in: 1...2)))
             self.setIsExecuting(false)
             self.setIsFinished(true)
             print("Finished uploading batch #\(self.id)\n")

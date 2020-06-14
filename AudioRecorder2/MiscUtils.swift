@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  FDWaveformView
-//
-//  Created by William Entriken on 2/4/16.
-//  Copyright © 2016 William Entriken. All rights reserved.
-//
 
 import Foundation
 import UIKit

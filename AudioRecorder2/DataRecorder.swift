@@ -2,9 +2,6 @@
 //  RecodingUserCase.swift
 //  AudioRecorder2
 //
-//  Created by steve on 5/22/20.
-//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
-//
 
 import Foundation
 
@@ -43,7 +40,7 @@ extension DataRecorder: RecordAudioDelegate {
 }
 
 var iters:Int = 0
-let MaxIters = 5
+let MaxIters = 50
 
 // MARK: writerUploader
 extension DataRecorder: RecordAudioV2Delegate {

@@ -1,10 +1,3 @@
-//
-//  SamplesFileWriter.swift
-//  AudioRecorder2
-//
-//  Created by Yaroslav Zhurakovskiy on 22.05.2020.
-//  Copyright © 2020 Yaroslav Zhurakovskiy. All rights reserved.
-//
 
 import Foundation
 
@@ -27,7 +20,7 @@ class SamplesFileWriter : MiscUtils {
     func write(_ samples: Samples) {
         cntr += 1
         if (cntr % 100 == 1) {
-            print("Writing \(samples.count) samples.. loop \(cntr)")
+            print("loop \(cntr): writing \(samples.count) samples .. ")
         }
 //        createFileHandleIfNeccessary()
 
