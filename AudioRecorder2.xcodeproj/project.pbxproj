@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */; };
+		68AD3043C1F17CFC6130995F /* Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD39152613AB49D73A2F7E /* Deque.swift */; };
+		68AD3076407A93FF76838D9C /* cider_object_buffer.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3CC80C25E362110518CB /* cider_object_buffer.js */; };
+		68AD31B5030C7DA640C7A0D9 /* CircBuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD31ADCEBC2EF02FB8BE40 /* CircBuff.swift */; };
+		68AD31C4248E44A14AD4051A /* OriginalGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3E76FA4ED07CAA81B404 /* OriginalGist.swift */; };
+		68AD31D8AFF474A0DB002C48 /* CircBufferTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3DEC3398152CBADAC729 /* CircBufferTest.swift */; };
+		68AD31EE09DA5C687854170C /* Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD39152613AB49D73A2F7E /* Deque.swift */; };
+		68AD335F6485857ABC7BA571 /* CircBufferTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3DEC3398152CBADAC729 /* CircBufferTest.swift */; };
+		68AD3472C8A4EDC314324543 /* circular_object_buffer.test.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD31D4A861ECEC4360C536 /* circular_object_buffer.test.js */; };
+		68AD3491C17DC644546450BE /* CircBuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD31ADCEBC2EF02FB8BE40 /* CircBuff.swift */; };
+		68AD3492592308BCE29C7264 /* circular_object_buffer.test.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD31D4A861ECEC4360C536 /* circular_object_buffer.test.js */; };
+		68AD3769D9312076150051C2 /* cider_utils.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD310A4F81B9D173015395 /* cider_utils.js */; };
+		68AD3805AA0D315BCCC9DEDB /* cider_utils.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD310A4F81B9D173015395 /* cider_utils.js */; };
 		68AD38159C28F27C8AB0C953 /* ThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */; };
+		68AD38CCE3F177B520411619 /* CiderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3D033952E55B6938F144 /* CiderUtils.swift */; };
+		68AD3A5FDB9E74DE83CBFA53 /* CiderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3D033952E55B6938F144 /* CiderUtils.swift */; };
 		68AD3B22CAD00EF9AA403485 /* ThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */; };
+		68AD3EE226778890FC32F80A /* cider_object_buffer.js in Sources */ = {isa = PBXBuildFile; fileRef = 68AD3CC80C25E362110518CB /* cider_object_buffer.js */; };
 		AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3191F324785094000F9F81 /* DataRecorder.swift */; };
 		AA50E7BF2479AE5400C4DDBF /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */; };
 		AA50E7C12479AE6F00C4DDBF /* MiscUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */; };
+		AA92DDAE24974E500078C23B /* Backtrace in Frameworks */ = {isa = PBXBuildFile; productRef = AA50E7C32479C59F00C4DDBF /* Backtrace */; };
+		AA92DDB1249756E90078C23B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA92DDB0249756E90078C23B /* XCTest.framework */; };
 		C41FBFEE2477F419009E0722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFED2477F419009E0722 /* AppDelegate.swift */; };
 		C41FBFF22477F419009E0722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FBFF12477F419009E0722 /* ViewController.swift */; };
 		C41FBFF52477F419009E0722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41FBFF32477F419009E0722 /* Main.storyboard */; };
@@ -37,11 +53,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68AD310A4F81B9D173015395 /* cider_utils.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cider_utils.js; sourceTree = "<group>"; };
+		68AD31ADCEBC2EF02FB8BE40 /* CircBuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircBuff.swift; sourceTree = "<group>"; };
+		68AD31D4A861ECEC4360C536 /* circular_object_buffer.test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = circular_object_buffer.test.js; sourceTree = "<group>"; };
 		68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTests.swift; sourceTree = "<group>"; };
-		68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalGist.swift; sourceTree = "<group>"; };
+		68AD39152613AB49D73A2F7E /* Deque.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deque.swift; sourceTree = "<group>"; };
+		68AD3CC80C25E362110518CB /* cider_object_buffer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cider_object_buffer.js; sourceTree = "<group>"; };
+		68AD3D033952E55B6938F144 /* CiderUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiderUtils.swift; sourceTree = "<group>"; };
+		68AD3DEC3398152CBADAC729 /* CircBufferTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircBufferTest.swift; sourceTree = "<group>"; };
+		68AD3E76FA4ED07CAA81B404 /* OriginalGist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalGist.swift; sourceTree = "<group>"; };
 		AA3191F324785094000F9F81 /* DataRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRecorder.swift; sourceTree = "<group>"; };
 		AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscUtils.swift; sourceTree = "<group>"; };
+		AA92DDB0249756E90078C23B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C41FBFEA2477F419009E0722 /* AudioRecorder2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorder2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41FBFED2477F419009E0722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C41FBFF12477F419009E0722 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA92DDAE24974E500078C23B /* Backtrace in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,26 +96,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA92DDB1249756E90078C23B /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		68AD336ED4F8332F99C0AAE3 /* experiments */ = {
-			isa = PBXGroup;
-			children = (
-				68AD36F445FB1EDF59DFE2BE /* OriginalGist.swift */,
-			);
-			path = experiments;
-			sourceTree = "<group>";
-		};
 		68AD34CE2F5BADFD28061E74 /* experiments */ = {
 			isa = PBXGroup;
 			children = (
 				68AD32FB5EBC537D6AA8379B /* ThreadTests.swift */,
+				68AD310A4F81B9D173015395 /* cider_utils.js */,
+				68AD3D033952E55B6938F144 /* CiderUtils.swift */,
+				68AD3CC80C25E362110518CB /* cider_object_buffer.js */,
+				68AD31D4A861ECEC4360C536 /* circular_object_buffer.test.js */,
+				68AD3E76FA4ED07CAA81B404 /* OriginalGist.swift */,
 			);
 			path = experiments;
+			sourceTree = "<group>";
+		};
+		AA92DDAF249756E90078C23B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA92DDB0249756E90078C23B /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C41FBFE12477F419009E0722 = {
@@ -99,7 +130,7 @@
 				C41FBFEC2477F419009E0722 /* AudioRecorder2 */,
 				C41FC0032477F41B009E0722 /* AudioRecorder2Tests */,
 				C41FBFEB2477F419009E0722 /* Products */,
-				68AD336ED4F8332F99C0AAE3 /* experiments */,
+				AA92DDAF249756E90078C23B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +161,8 @@
 				AA50E7BE2479AE5400C4DDBF /* FileUtils.swift */,
 				AA50E7C02479AE6F00C4DDBF /* MiscUtils.swift */,
 				68AD34CE2F5BADFD28061E74 /* experiments */,
+				68AD39152613AB49D73A2F7E /* Deque.swift */,
+				68AD31ADCEBC2EF02FB8BE40 /* CircBuff.swift */,
 			);
 			path = AudioRecorder2;
 			sourceTree = "<group>";
@@ -139,6 +172,7 @@
 			children = (
 				C41FC0042477F41B009E0722 /* AudioRecorder2Tests.swift */,
 				C41FC0062477F41B009E0722 /* Info.plist */,
+				68AD3DEC3398152CBADAC729 /* CircBufferTest.swift */,
 			);
 			path = AudioRecorder2Tests;
 			sourceTree = "<group>";
@@ -160,7 +194,7 @@
 			);
 			name = AudioRecorder2;
 			packageProductDependencies = (
-				AA50E7C32479C59F00C4DDBF /* XCSwiftPackageProductDependency */,
+				AA50E7C32479C59F00C4DDBF /* Backtrace */,
 			);
 			productName = AudioRecorder2;
 			productReference = C41FBFEA2477F419009E0722 /* AudioRecorder2.app */;
@@ -213,7 +247,7 @@
 			);
 			mainGroup = C41FBFE12477F419009E0722;
 			packageReferences = (
-				AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */,
+				AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */,
 			);
 			productRefGroup = C41FBFEB2477F419009E0722 /* Products */;
 			projectDirPath = "";
@@ -260,8 +294,15 @@
 				C46A9A1624781AB800E297BC /* SamplesUploader.swift in Sources */,
 				C46A9A1824781CFB00E297BC /* SamplesFileWriter.swift in Sources */,
 				AA3191F424785094000F9F81 /* DataRecorder.swift in Sources */,
-				68AD36E3C7060DE5DEB9CDC4 /* OriginalGist.swift in Sources */,
 				68AD3B22CAD00EF9AA403485 /* ThreadTests.swift in Sources */,
+				68AD3769D9312076150051C2 /* cider_utils.js in Sources */,
+				68AD3A5FDB9E74DE83CBFA53 /* CiderUtils.swift in Sources */,
+				68AD31EE09DA5C687854170C /* Deque.swift in Sources */,
+				68AD3076407A93FF76838D9C /* cider_object_buffer.js in Sources */,
+				68AD31B5030C7DA640C7A0D9 /* CircBuff.swift in Sources */,
+				68AD3472C8A4EDC314324543 /* circular_object_buffer.test.js in Sources */,
+				68AD335F6485857ABC7BA571 /* CircBufferTest.swift in Sources */,
+				68AD31C4248E44A14AD4051A /* OriginalGist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +312,13 @@
 			files = (
 				C41FC0052477F41B009E0722 /* AudioRecorder2Tests.swift in Sources */,
 				68AD38159C28F27C8AB0C953 /* ThreadTests.swift in Sources */,
+				68AD3805AA0D315BCCC9DEDB /* cider_utils.js in Sources */,
+				68AD38CCE3F177B520411619 /* CiderUtils.swift in Sources */,
+				68AD3043C1F17CFC6130995F /* Deque.swift in Sources */,
+				68AD3EE226778890FC32F80A /* cider_object_buffer.js in Sources */,
+				68AD3491C17DC644546450BE /* CircBuff.swift in Sources */,
+				68AD3492592308BCE29C7264 /* circular_object_buffer.test.js in Sources */,
+				68AD31D8AFF474A0DB002C48 /* CircBufferTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +581,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */ = {
+		AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/swift-backtrace.git";
 			requirement = {
@@ -544,9 +592,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA50E7C32479C59F00C4DDBF /* XCSwiftPackageProductDependency */ = {
+		AA50E7C32479C59F00C4DDBF /* Backtrace */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference */;
+			package = AA50E7C22479C59F00C4DDBF /* XCRemoteSwiftPackageReference "swift-backtrace" */;
 			productName = Backtrace;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -1,7 +1,7 @@
 import XCTest
 @testable import AudioRecorder2
 
-class AudioRecorder2Tests: XCTestCase {
+class CircBufferTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -14,7 +14,7 @@ class AudioRecorder2Tests: XCTestCase {
     func testCircBuff() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+
 
     }
 

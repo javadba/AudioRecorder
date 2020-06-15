@@ -24,21 +24,45 @@ enum StartAudioRecordingResult {
     case failure(Error)
 }
 
+public class CircBuffer {
+    public static let CircBufSize        =  1024        // lock-free circular fifo/buffer size
+//   public static let CircBufSize        =  256*1024        // lock-free circular fifo/buffer size
+    private let circBufSize: Int
+    private var circBuffer : [Float]
+    private var circInIdx  : Int    =  0            // sample input  index
+    private var circOutIdx : Int    =  0            // sample output index
+    private var pz = 0
+
+    public init(circBufSize: Int = CircBuffer.CircBufSize) {
+        self.circBufSize = circBufSize
+        self.circBuffer = [Float](repeating: 0, count: self.circBufSize)
+    }
+
+//    func push(_ sample: Float) {
+//        circBuffer[pz] = sample
+//        pz += Int(audioBuffer.mNumberChannels)
+//        if pz >= circBuf.Size {
+//            pz = 0
+//        }
+//    }
+}
+
 final class AudioRecorderV2 {
+    private static let CircBufSize        =  1024        // lock-free circular fifo/buffer size
     private var auAudioUnit: AUAudioUnit! = nil
-    
+
     private var enableRecording     = true
     private var audioSessionActive  = false
     private var audioSetupComplete  = false
     private var isRecording         = false
-    
+
     private var sampleRate : Double =  44100.0      // desired audio sample rate
-    
+
     private let circBuffSize        =  32768        // lock-free circular fifo/buffer size
     private var circBuffer          = [Float](repeating: 0, count: 32768)
     private var circInIdx  : Int    =  0            // sample input  index
     private var circOutIdx : Int    =  0            // sample output index
-    
+
     private var audioLevel : Float  = 0.0
     
     private var micPermissionRequested  = false
@@ -182,6 +206,7 @@ final class AudioRecorderV2 {
         }
         self.circInIdx = currentCircInIdx
         // measuredMicVol_1 = sqrt( Float(sum) / Float(count) ) // scaled volume
+        // This is a bit of a magic formula ..
         if sum > 0.0 && frameCount > 0 {
             let tmp = 5.0 * (logf(sum / Float32(frameCount)) + 20.0)
             let r : Float32 = 0.2
